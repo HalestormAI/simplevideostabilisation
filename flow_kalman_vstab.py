@@ -4,7 +4,7 @@ import constants
 import logging
 
 from runner import VideoStabilisationRunner
-from stabiliser import KalmanFlowStabiliser
+from stabiliser import FlowOnlyStabiliser
 
 logging.basicConfig(level=constants.LOG_LEVEL, format=constants.LOG_FORMAT)
 
@@ -26,5 +26,5 @@ def parse_args():
 if __name__ == '__main__':
     args = parse_args()
     logging.info("Starting")
-    stab = VideoStabilisationRunner(args, KalmanFlowStabiliser)
+    stab = VideoStabilisationRunner(args, FlowOnlyStabiliser)
     stab.start()
